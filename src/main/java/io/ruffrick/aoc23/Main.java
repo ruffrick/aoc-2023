@@ -1,17 +1,14 @@
 package io.ruffrick.aoc23;
 
-import io.ruffrick.aoc23.day01.Day01;
-import io.ruffrick.aoc23.day02.Day02;
-import io.ruffrick.aoc23.day03.Day03;
-import io.ruffrick.aoc23.day04.Day04;
-import io.ruffrick.aoc23.day05.Day05;
+import java.util.Calendar;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new Day01());
-        System.out.println(new Day02());
-        System.out.println(new Day03());
-        System.out.println(new Day04());
-        System.out.println(new Day05());
+        try {
+            final String name = String.format("io.ruffrick.aoc23.day%1$02d.Day%1$02d", Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+            System.out.println(Class.forName(name).getConstructor().newInstance());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
