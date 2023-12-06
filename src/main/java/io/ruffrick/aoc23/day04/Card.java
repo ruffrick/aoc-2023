@@ -1,7 +1,5 @@
 package io.ruffrick.aoc23.day04;
 
-import io.ruffrick.aoc23.InvalidInputException;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -23,7 +21,7 @@ public record Card(int number, List<Integer> numbers, List<Integer> winningNumbe
                     .toList();
             return new Card(number, numbers, winningNumbers, 1);
         }
-        throw new InvalidInputException(line);
+        throw new IllegalArgumentException(line);
     }
 
     public int matchingNumbers() {

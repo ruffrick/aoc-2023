@@ -26,12 +26,9 @@ public class Day04 extends Solution {
                 .toArray(Card[]::new);
         for (int i = 0; i < cards.length; i++) {
             final Card card = cards[i];
-            System.out.println(i + ", " + card.matchingNumbers());
             for (int j = i + 1; j < Math.min(card.matchingNumbers() + i + 1, cards.length); j++) {
-                System.out.println(j);
                 cards[j] = cards[j].copy(card.copies());
             }
-            System.out.println();
         }
         final int count = Arrays.stream(cards)
                 .mapToInt(Card::copies)

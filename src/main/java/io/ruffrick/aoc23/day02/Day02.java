@@ -1,6 +1,5 @@
 package io.ruffrick.aoc23.day02;
 
-import io.ruffrick.aoc23.InvalidInputException;
 import io.ruffrick.aoc23.Question;
 import io.ruffrick.aoc23.Solution;
 import io.ruffrick.aoc23.Title;
@@ -53,7 +52,7 @@ public class Day02 extends Solution {
             }
             return new Game(id, cubes);
         }
-        throw new InvalidInputException(line);
+        throw new IllegalArgumentException(line);
     }
 
     private boolean checkCount(final Game game) {
